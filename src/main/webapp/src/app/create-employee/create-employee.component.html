@@ -1,0 +1,37 @@
+<h2>Create Employee</h2>
+<div [hidden]="submitted" style="width: 50%; margin-left: 25%">
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" required class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" required class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" required [(ngModel)]="employee.gender" name="gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" required id="dob" placeholder="yyyy-MM-dd" required [(ngModel)]="employee.dob" name="dob" min="1900-01-01" max = "2019-08-12">
+    </div>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" required class="form-control" id="department" required [(ngModel)]="employee.department" name="department">
+    </div>
+
+    <input type="submit" class="btn btn-success" value = "Register">
+  </form>
+</div>
+
+<div [hidden]="!submitted" >
+  <h4>You registered successfully!</h4>
+</div>
