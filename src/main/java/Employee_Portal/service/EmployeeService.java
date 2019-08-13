@@ -17,15 +17,18 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
         List<Employee> list= employeeRepository.findAll();
-        Collections.sort(list);
-        return list;
+        return getAllEmployeesSortedByFirstName(list);
     }
 
-    @PostMapping("/employees")
-    public Employee createEmployee(@Valid @RequestBody Employee employee) {
+    public List<Employee> getAllEmployeesSortedByFirstName(List<Employee> employeeList)
+    {
+        Collections.sort(employeeList);
+        return employeeList;
+    }
+
+    public Employee createEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 }
