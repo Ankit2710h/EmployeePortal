@@ -33,8 +33,8 @@
 - Once it is complete, execute command "npm start" to start the appication, it will be deployed to localhost:4200 which is the default port for Angular app.
 
 ## App Navigation
-Home page displays 2 tabs :
-	* List Employees - To list all the employees(in ascending order by first name) added into the database with all the details. 
+- Home page displays 2 tabs :
+	* List Employees - To list all the employees(in ascending order by first name) added into the database with all the details.
 	* Add Employee - To add a new employee to the database. A form is displayed to be filled in and submitted in order to add the employee.
 	
 ## packages
